@@ -1,5 +1,6 @@
 {
     "name": "natbienetre/publish2cloudflare",
+    "type": "wordpress-plugin",
     "description": "WordPress plugin to publish static site to Cloudflare pages after simply-static generation.",
     "require-dev": {
         "yoast/phpunit-polyfills": "^2",
@@ -15,8 +16,8 @@
     ],
     "scripts": {
         "i18n": [
-            "wp i18n make-pot . languages/ss-post-exec.pot --exclude=\"vendor\"",
-            "wp i18n update-po languages/ss-post-exec.pot"
+            "wp i18n make-pot . languages/sspostexec.pot --exclude=\"vendor\"",
+            "wp i18n update-po languages/sspostexec.pot"
         ],
         "i18n-build": [
             "wp i18n make-mo languages",
@@ -41,5 +42,16 @@
             "phpunit"
         ]
     },
-    "require": {}
+    "require": {
+        "composer/installers": "^2.2",
+        "deliciousbrains/wp-background-processing": "^1.1",
+        "maclof/kubernetes-client": "^0.16.0",
+        "php-http/guzzle6-adapter": "^2.0",
+        "symfony/yaml": "^5.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
 }
