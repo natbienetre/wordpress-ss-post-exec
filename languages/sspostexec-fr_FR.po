@@ -11,7 +11,7 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"
 "X-Generator: WP-CLI 2.8.1\n"
-"X-Domain: ss-post-exec\n"
+"X-Domain: sspostexec\n"
 
 #. Plugin Name of the plugin
 msgid "Simply Static Post Exec"

@@ -27,7 +27,7 @@
             "grep ' * Version:' simply-static-post-exec.php | sed -e 's/.*: *//'"
         ],
         "ci-test": [
-            "wp scaffold plugin-tests ss-post-exec --dir=$(pwd) --force",
+            "wp scaffold plugin-tests simply-static-post-exec --dir=$(pwd) --force",
             "./bin/install-wp-tests.sh wordpress root root localhost latest true",
             "phpunit --no-interaction --log-junit junit-result.xml"
         ],
@@ -36,7 +36,7 @@
             "composer run-script i18n-build",
             "composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction --no-progress --no-suggest",
             "composer dump-autoload --no-dev --optimize --classmap-authoritative",
-            "zip -9vr ss-post-exec.zip . -i@build.lst -i *.php"
+            "zip -9vr simply-static-post-exec.zip . -i@build.lst -i *.php"
         ],
         "test": [
             "phpunit"

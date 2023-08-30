@@ -23,9 +23,9 @@ class CSSPostExecOptionsTest extends WP_UnitTestCase {
 			'private_key_path' => "{$tmp_dir}/private.key",
 		) );
 
-		unlink( "{$tmp_dir}/certificate-authority.crt" );
-		unlink( "{$tmp_dir}/certificate.crt" );
-		unlink( "{$tmp_dir}/private.key" );
+		if ( file_exists( "{$tmp_dir}/certificate-authority.crt" ) ) { unlink( "{$tmp_dir}/certificate-authority.crt" ); }
+		if ( file_exists( "{$tmp_dir}/certificate.crt" ) ) { unlink( "{$tmp_dir}/certificate.crt" ); }
+		if ( file_exists( "{$tmp_dir}/private.key" ) ) { unlink( "{$tmp_dir}/private.key" ); }
 
 		$this->assertFileDoesNotExist( "{$tmp_dir}/certificate-authority.key" );
 		$this->assertFileDoesNotExist( "{$tmp_dir}/certificate.key" );

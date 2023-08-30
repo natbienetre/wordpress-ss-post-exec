@@ -1,4 +1,4 @@
-.settings_page_ss-post-exec .ui-tooltip {
+.settings_page_ss-post-exec /* Should match SSPostExecAdminPage::MENU_SLUG */ .ui-tooltip {
 	max-width: 300px;
 	font-size: 12px;
 	line-height: 1.4;

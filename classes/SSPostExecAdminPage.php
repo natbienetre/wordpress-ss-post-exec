@@ -2,6 +2,7 @@
 
 class SSPostExecAdminPage {
     const OPTIONS_PAGE_ID   = 'sspostexec-options';
+    const MENU_SLUG = 'ss-post-exec';
 
     const GENERAL_SECTION  = 'general';
     const SECURITY_SECTION = 'security';
@@ -131,7 +132,7 @@ class SSPostExecAdminPage {
     }
 
     public function get_url( array $params = array() ): string {
-        $params['page'] = 'ss-post-exec';
+        $params['page'] = self::MENU_SLUG;
 
         return admin_url( 'options-general.php?' . http_build_query( $params ) );
     }
@@ -141,7 +142,7 @@ class SSPostExecAdminPage {
             _x( 'Simply Static Post Exec', 'Label in the admin menu', 'sspostexec' ),
             _x( 'SS Post Exec', 'Title of the admin page', 'sspostexec' ),
             'manage_options',
-            'ss-post-exec',
+            self::MENU_SLUG,
             array( $this, 'options_page' ),
         );
     }

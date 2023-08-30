@@ -36,7 +36,7 @@ jobs:
       with:
         artifactContentType: "application/zip"
         artifactErrorsFailBuild: true
-        artifacts: "sspostexec.zip"
+        artifacts: "simply-static-post-exec.zip"
         bodyFile: changes.txt
         draft: true
         omitDraftDuringUpdate: true
