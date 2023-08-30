@@ -23,7 +23,7 @@ class SSPostExecAdminPage {
 
         add_action( 'admin_enqueue_scripts', array( $instance, 'enqueue_admin_script' ) );
 
-        add_filter( 'plugin_action_links_' . plugin_basename( PASS2CF_PLUGIN_FILE ), array( $instance, 'plugin_settings' ) );
+        add_filter( 'plugin_action_links_' . plugin_basename( SSPOSTEXEC_PLUGIN_FILE ), array( $instance, 'plugin_settings' ) );
 
         return $instance;
     }

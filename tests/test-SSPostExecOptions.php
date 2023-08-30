@@ -1,24 +1,44 @@
 <?php
 
 class CSSPostExecOptionsTest extends WP_UnitTestCase {
-	public function test_null() {
+	public function test_write_no_certificates() {
 		require_once __DIR__ . '/../classes/SSPostExecOptions.php';
 
-		$value = new SSPostExecOptions( null );
+		$value = new SSPostExecOptions( array() );
 
-		$this->assertNull( $value->to_response() );
+		$this->assertNull( $value->write_certificates() );
 	}
 
-	public function test_secret() {
+	public function test_write_certificates() {
 		require_once __DIR__ . '/../classes/SSPostExecOptions.php';
 
-		$value = new SSPostExecOptions( "my-secret", true );
-		$response = $value->to_response();
+		$tmp_dir = sys_get_temp_dir();
 
-		$this->assertIsArray( $response );
-		$this->assertEquals( array(
-            'type'  => 'secret_text',
-            'value' => 'my-secret',
-        ), $response );
+		$value = new SSPostExecOptions( array(
+			'certificate_authority_data' => 'the-certificate-authority-content',
+			'certificate_authority_path' => "{$tmp_dir}/certificate-authority.crt",
+			'certificate_data' => 'the-certificate-content',
+			'certificate_path' =>  "{$tmp_dir}/certificate.crt",
+			'private_key_data' => 'the-private-key-content',
+			'private_key_path' => "{$tmp_dir}/private.key",
+		) );
+
+		unlink( "{$tmp_dir}/certificate-authority.crt" );
+		unlink( "{$tmp_dir}/certificate.crt" );
+		unlink( "{$tmp_dir}/private.key" );
+
+		$this->assertFileDoesNotExist( "{$tmp_dir}/certificate-authority.key" );
+		$this->assertFileDoesNotExist( "{$tmp_dir}/certificate.key" );
+		$this->assertFileDoesNotExist( "{$tmp_dir}/private.key" );
+
+		$this->assertNull( $value->write_certificates() );
+
+		$this->assertFileExists( "{$tmp_dir}/certificate-authority.crt" );
+		$this->assertFileExists( "{$tmp_dir}/certificate.crt" );
+		$this->assertFileExists( "{$tmp_dir}/private.key" );
+
+		$this->assertEquals( 'the-certificate-authority-content', file_get_contents( "{$tmp_dir}/certificate-authority.crt" ) );
+		$this->assertEquals( 'the-certificate-content', file_get_contents( "{$tmp_dir}/certificate.crt" ) );
+		$this->assertEquals( 'the-private-key-content', file_get_contents( "{$tmp_dir}/private.key" ) );
 	}
 }

@@ -51,21 +51,10 @@ jQuery( document ).ready( function( $ ) {
 } );
 
 jQuery( document ).ready( function( $ ) {
-	$( '#sspostexec-manifest' ).each( function( index, element ) {
+	$( '#sspostexec-manifest, .post-type-sspostexec-job #content' ).add( $( 'input[value=k8s_manifest]' ).parents( 'tr' ).first().find( 'textarea' ) ).each( function( index, element ) {
 		wp.codeEditor.initialize(
 			element,
 			sspostexec_codeeditor_settings,
-		);
-	} );
-} );
-
-jQuery( document ).ready( function( $ ) {
-	const settings = $.extend(sspostexec_codeeditor_settings, {'codemirror': $.extend(sspostexec_codeeditor_settings['codemirror'], {'readOnly': true})});
-
-	$( 'input[value=k8s_manifest]' ).parents( 'tr' ).first().find( 'textarea' ).add('.post-type-sspostexec-job #content' ).each( function( _, element ) {
-		wp.codeEditor.initialize(
-		element,
-		settings,
 		);
 	} );
 } );

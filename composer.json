@@ -24,7 +24,7 @@
             "wp i18n make-json languages --no-purge --update-mo-files --pretty-print"
         ],
         "version": [
-            "grep ' * Version:' ss-post-exec.php | sed -e 's/.*: *//'"
+            "grep ' * Version:' simply-static-post-exec.php | sed -e 's/.*: *//'"
         ],
         "ci-test": [
             "wp scaffold plugin-tests ss-post-exec --dir=$(pwd) --force",
@@ -44,7 +44,6 @@
     },
     "require": {
         "composer/installers": "^2.2",
-        "deliciousbrains/wp-background-processing": "^1.1",
         "maclof/kubernetes-client": "^0.16.0",
         "php-http/guzzle6-adapter": "^2.0",
         "symfony/yaml": "^5.4"
