@@ -1,5 +1,6 @@
 {
     "name": "natbienetre/publish2cloudflare",
+    "type": "wordpress-plugin",
     "description": "WordPress plugin to publish static site to Cloudflare pages after simply-static generation.",
     "require-dev": {
         "yoast/phpunit-polyfills": "^2",
@@ -15,18 +16,18 @@
     ],
     "scripts": {
         "i18n": [
-            "wp i18n make-pot . languages/ss-post-exec.pot --exclude=\"vendor\"",
-            "wp i18n update-po languages/ss-post-exec.pot"
+            "wp i18n make-pot . languages/sspostexec.pot --exclude=\"vendor\"",
+            "wp i18n update-po languages/sspostexec.pot"
         ],
         "i18n-build": [
             "wp i18n make-mo languages",
             "wp i18n make-json languages --no-purge --update-mo-files --pretty-print"
         ],
         "version": [
-            "grep ' * Version:' ss-post-exec.php | sed -e 's/.*: *//'"
+            "grep ' * Version:' simply-static-post-exec.php | sed -e 's/.*: *//'"
         ],
         "ci-test": [
-            "wp scaffold plugin-tests ss-post-exec --dir=$(pwd) --force",
+            "wp scaffold plugin-tests simply-static-post-exec --dir=$(pwd) --force",
             "./bin/install-wp-tests.sh wordpress root root localhost latest true",
             "phpunit --no-interaction --log-junit junit-result.xml"
         ],
@@ -35,11 +36,21 @@
             "composer run-script i18n-build",
             "composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction --no-progress --no-suggest",
             "composer dump-autoload --no-dev --optimize --classmap-authoritative",
-            "zip -9vr ss-post-exec.zip . -i@build.lst -i *.php"
+            "zip -9vr simply-static-post-exec.zip . -i@build.lst -i *.php"
         ],
         "test": [
             "phpunit"
         ]
     },
-    "require": {}
+    "require": {
+        "composer/installers": "^2.2",
+        "maclof/kubernetes-client": "^0.16.0",
+        "php-http/guzzle6-adapter": "^2.0",
+        "symfony/yaml": "^5.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
 }

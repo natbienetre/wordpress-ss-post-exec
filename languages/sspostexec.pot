@@ -1,0 +1,239 @@
+# Copyright (C) 2023 Pierre PÉRONNET
+# This file is distributed under the MPL-2.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simply Static Post Exec 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simply-static-post-exec\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-08-29T17:24:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: sspostexec\n"
+
+#. Plugin Name of the plugin
+msgid "Simply Static Post Exec"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/natbienetre/wordpress-ss-post-exec"
+msgstr ""
+
+#. Description of the plugin
+#: classes/SSPostExecAdminPage.php:155
+msgid "Execute a script after Simply Static has finished running."
+msgstr ""
+
+#. Author of the plugin
+msgid "Pierre PÉRONNET"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/holyhope"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:32
+msgid "Settings"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:78
+#: classes/SSPostExecAdminPage.php:111
+msgid "Nonce failed, please refresh and retry."
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:83
+#: classes/SSPostExecAdminPage.php:116
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:103
+msgid "Job created."
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:129
+msgid "The Kubernetes cluster is ready to use."
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:141
+msgctxt "Label in the admin menu"
+msgid "Simply Static Post Exec"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:142
+msgctxt "Title of the admin page"
+msgid "SS Post Exec"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:151
+msgctxt "Header on top of the admin page"
+msgid "Simply Static Post Exec"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:156
+msgid "View previous executions."
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:164
+msgid "Reset"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:166
+msgid "Check the settings"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:168
+msgid "Trigger once"
+msgstr ""
+
+#. translators: %s is the error message
+#: classes/SSPostExecAdminPage.php:212
+msgctxt "Error message"
+msgid "Failed to parse certificate authority: %s"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:220
+msgctxt "Error message"
+msgid "The certificate authority cannot be checked because the openssl extension is not available"
+msgstr ""
+
+#. translators: %s is the error message
+#: classes/SSPostExecAdminPage.php:240
+msgctxt "Error message"
+msgid "Failed to parse client certificate: %s"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:248
+msgctxt "Error message"
+msgid "The client certificate cannot be checked because the openssl extension is not available"
+msgstr ""
+
+#. translators: %s is the error message
+#: classes/SSPostExecAdminPage.php:268
+msgctxt "Error message"
+msgid "The private key does not match the client certificate: %s"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:276
+msgctxt "Error message"
+msgid "The private key cannot be checked because the openssl extension is not available"
+msgstr ""
+
+#. translators: %s is the error message
+#: classes/SSPostExecAdminPage.php:291
+msgctxt "Error message"
+msgid "Failed to request Kubernetes API: %s"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:327
+msgctxt "Header for the setting section"
+msgid "General"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:334
+msgctxt "Label for the setting field"
+msgid "Check to enable the plugin"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:342
+msgctxt "Label for the setting field"
+msgid "Kubernetes API URL"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:350
+msgctxt "Label for the setting field"
+msgid "Manifest to apply"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:358
+msgctxt "Header for the setting section"
+msgid "Security"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:365
+msgctxt "Label for the setting field"
+msgid "Use local credentials"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:373
+msgctxt "Label for the setting field"
+msgid "Verify remote certificate"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:381
+msgctxt "Label for the setting field"
+msgid "Path to the certificate authority"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:392
+msgctxt "Label for the setting field"
+msgid "Certificate authority"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:403
+msgctxt "Label for the setting field"
+msgid "Path to the client certificate"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:414
+msgctxt "Label for the setting field"
+msgid "Client certificate"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:425
+msgctxt "Label for the setting field"
+msgid "Path to the private key"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:436
+msgctxt "Label for the setting field"
+msgid "Private key"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:447
+msgctxt "Label for the setting field"
+msgid "Password of the private key"
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:459
+msgid "General settings to configure the command to run."
+msgstr ""
+
+#: classes/SSPostExecAdminPage.php:483
+msgid "These settings define how to communicate with kubernetes."
+msgstr ""
+
+#: classes/SSPostExecJob.php:52
+msgid "Invalid creation timestamp"
+msgstr ""
+
+#: classes/SSPostExecJob.php:91
+msgid "A job created by SS Post Exec"
+msgstr ""
+
+#: classes/SSPostExecJob.php:106
+msgid "SS Post Exec Jobs"
+msgstr ""
+
+#: classes/SSPostExecJob.php:107
+msgid "SS Post Exec Job"
+msgstr ""
+
+#: classes/SSPostExecJobRunner.php:42
+msgctxt "Error message"
+msgid "Unexpected error: %s"
+msgstr ""
+
+#: classes/SSPostExecOptions.php:54
+msgid "Failed to initialize the filesystem"
+msgstr ""
+
+#: classes/SSPostExecOptions.php:66
+msgid "Certificate data is set but private key data is not"
+msgstr ""
+
+#: classes/SSPostExecOptions.php:75
+msgid "Private key data is set but certificate data is not"
+msgstr ""

@@ -1,0 +1,33 @@
+.settings_page_ss-post-exec /* Should match SSPostExecAdminPage::MENU_SLUG */ .ui-tooltip {
+	max-width: 300px;
+	font-size: 12px;
+	line-height: 1.4;
+	text-align: left;
+	padding: 8px 10px;
+	border-radius: 3px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	color: #333;
+	box-shadow: 0 0 5px #ccc;
+	z-index: 999999;
+	position: absolute;
+	display: none;
+	white-space: normal;
+	word-wrap: break-word;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.settings_page_ss-post-exec .teatarea-large {
+    max-width: 100%;
+	height: 200px
+}
+
+.settings_page_ss-post-exec #sspostexec-manifest {
+	overflow-wrap: normal;
+	overflow-x: scroll;
+	white-space: pre
+}
